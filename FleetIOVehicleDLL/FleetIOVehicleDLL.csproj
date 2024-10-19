@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9A645344-5C46-4001-BC93-2CF968E5A199}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FleetIOVehicleDLL</RootNamespace>
+    <AssemblyName>FleetIOVehicleDLL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NewEventLogDLL">
+      <HintPath>..\..\Blue Jay Class Library\NewEventLogDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FindFleetIOVehicleByTypeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindFleetIOVehicleByTypeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FindFleetIOVehicleByVehilceNumberDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindFleetIOVehicleByVehilceNumberDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FindFleetIOVehicleDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindFleetIOVehicleDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FindFleetIOVehiclesByGroupDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindFleetIOVehiclesByGroupDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FindSortedFleetIOVehiclesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindSortedFleetIOVehiclesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FleetIOVehicleClass.cs" />
+    <Compile Include="FleetIOVehiclesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FleetIOVehiclesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InsertFleetIOVehicleEntry.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InsertFleetIOVehicleEntry.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="FindFleetIOVehicleByTypeDataSet.xsc">
+      <DependentUpon>FindFleetIOVehicleByTypeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindFleetIOVehicleByTypeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindFleetIOVehicleByTypeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindFleetIOVehicleByTypeDataSet.xss">
+      <DependentUpon>FindFleetIOVehicleByTypeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindFleetIOVehicleByVehilceNumberDataSet.xsc">
+      <DependentUpon>FindFleetIOVehicleByVehilceNumberDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindFleetIOVehicleByVehilceNumberDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindFleetIOVehicleByVehilceNumberDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindFleetIOVehicleByVehilceNumberDataSet.xss">
+      <DependentUpon>FindFleetIOVehicleByVehilceNumberDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindFleetIOVehicleDataSet.xsc">
+      <DependentUpon>FindFleetIOVehicleDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindFleetIOVehicleDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindFleetIOVehicleDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindFleetIOVehicleDataSet.xss">
+      <DependentUpon>FindFleetIOVehicleDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindFleetIOVehiclesByGroupDataSet.xsc">
+      <DependentUpon>FindFleetIOVehiclesByGroupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindFleetIOVehiclesByGroupDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindFleetIOVehiclesByGroupDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindFleetIOVehiclesByGroupDataSet.xss">
+      <DependentUpon>FindFleetIOVehiclesByGroupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindSortedFleetIOVehiclesDataSet.xsc">
+      <DependentUpon>FindSortedFleetIOVehiclesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindSortedFleetIOVehiclesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindSortedFleetIOVehiclesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindSortedFleetIOVehiclesDataSet.xss">
+      <DependentUpon>FindSortedFleetIOVehiclesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FleetIOVehiclesDataSet.xsc">
+      <DependentUpon>FleetIOVehiclesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FleetIOVehiclesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FleetIOVehiclesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FleetIOVehiclesDataSet.xss">
+      <DependentUpon>FleetIOVehiclesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="InsertFleetIOVehicleEntry.xsc">
+      <DependentUpon>InsertFleetIOVehicleEntry.xsd</DependentUpon>
+    </None>
+    <None Include="InsertFleetIOVehicleEntry.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InsertFleetIOVehicleEntry.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InsertFleetIOVehicleEntry.xss">
+      <DependentUpon>InsertFleetIOVehicleEntry.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
