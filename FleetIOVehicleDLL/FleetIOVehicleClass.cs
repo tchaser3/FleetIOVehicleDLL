@@ -109,14 +109,14 @@ namespace FleetIOVehicleDLL
             return aFindFleetIOVehicleDataSet;
         }
 
-        public bool InsertFleetIOVehicle(int intFleetIOVehicleID, int intFleetIOVehicleYear, string strFleetIOVehicleNumber, string strFleetIOVehicleMake, string strFleetIOVehicleModel, string strFleetIOVehicleVIN, string strFleetIOVehicleType, string strFleetIOVehicleGroup, string strFleetIOVehicleLicensePlate)
+        public bool InsertFleetIOVehicle(int intFleetIOVehicleID, int intFleetIOVehicleYear, string strFleetIOVehicleNumber, string strFleetIOVehicleMake, string strFleetIOVehicleModel, string strFleetIOVehicleVIN, string strFleetIOVehicleType, string strFleetIOVehicleGroup, string strFleetIOVehicleLicensePlate, bool blnFleetIOVehicleActive, string strFleetIOVehicleStatus)
         {
             bool blnFatalError = false;
 
             try
             {
                 aInsertFleetIOVehicleEntryTableAdapter = new InsertFleetIOVehicleEntryTableAdapters.QueriesTableAdapter();
-                aInsertFleetIOVehicleEntryTableAdapter.InsertFleetIOVehicle(intFleetIOVehicleID, intFleetIOVehicleYear, strFleetIOVehicleNumber, strFleetIOVehicleMake, strFleetIOVehicleModel, strFleetIOVehicleVIN, strFleetIOVehicleType, strFleetIOVehicleGroup, strFleetIOVehicleLicensePlate);
+                aInsertFleetIOVehicleEntryTableAdapter.InsertFleetIOVehicle(intFleetIOVehicleID, intFleetIOVehicleYear, strFleetIOVehicleNumber, strFleetIOVehicleMake, strFleetIOVehicleModel, strFleetIOVehicleVIN, strFleetIOVehicleType, strFleetIOVehicleGroup, strFleetIOVehicleLicensePlate, blnFleetIOVehicleActive, strFleetIOVehicleStatus);
             }
             catch (Exception Ex)
             {

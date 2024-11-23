@@ -283,12 +283,14 @@ namespace FleetIOVehicleDLL.InsertFleetIOVehicleEntryTableAdapters {
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FleetIOVehicleType", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FleetIOVehicleGroup", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FleetIOVehicleLicensePlate", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FleetIOVehicleActive", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FleetIOVehicleStatus", global::System.Data.SqlDbType.NVarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int InsertFleetIOVehicle(global::System.Nullable<int> FleetIOVehicleID, global::System.Nullable<int> FleetVehicleYear, string FleetIOVehicleNumber, string FleetIOVehicleMake, string FleetIOVehicleModel, string FleetIOVIN, string FleetIOVehicleType, string FleetIOVehicleGroup, string FleetIOVehicleLicensePlate) {
+        public virtual int InsertFleetIOVehicle(global::System.Nullable<int> FleetIOVehicleID, global::System.Nullable<int> FleetVehicleYear, string FleetIOVehicleNumber, string FleetIOVehicleMake, string FleetIOVehicleModel, string FleetIOVIN, string FleetIOVehicleType, string FleetIOVehicleGroup, string FleetIOVehicleLicensePlate, global::System.Nullable<bool> FleetIOVehicleActive, string FleetIOVehicleStatus) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[0]));
             if ((FleetIOVehicleID.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(FleetIOVehicleID.Value));
@@ -343,6 +345,18 @@ namespace FleetIOVehicleDLL.InsertFleetIOVehicleEntryTableAdapters {
             }
             else {
                 command.Parameters[9].Value = ((string)(FleetIOVehicleLicensePlate));
+            }
+            if ((FleetIOVehicleActive.HasValue == true)) {
+                command.Parameters[10].Value = ((bool)(FleetIOVehicleActive.Value));
+            }
+            else {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((FleetIOVehicleStatus == null)) {
+                command.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[11].Value = ((string)(FleetIOVehicleStatus));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
